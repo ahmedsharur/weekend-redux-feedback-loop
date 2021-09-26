@@ -31,11 +31,26 @@ const understandingToAddReducer =(state = [], action) =>{
     return state;
 }
 
+const supportToAddReducer = (state = [], action) =>{
+    if (action.type = 'SET_ADD_SUPPORT'){
+        return [...state, action.payload]
+    }
+    return state;
+}
+
+const commentsToAddReducer = (state = [], action) =>{
+    if (action.type === 'SET_ADD_COMMENTS'){
+        return [...state, action.payload]
+    }
+    return state;
+}
+
 const reduxStore = createStore(
     combineReducers({
         ReviewFeedbackReducer,
         feelingToAddReducer,
         understandingToAddReducer,
+        supportToAddReducer,
     }),
     applyMiddleware(logger)
 );

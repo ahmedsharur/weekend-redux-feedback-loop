@@ -12,7 +12,8 @@ function PageFourForm(){
         console.log('add comments')
         // Send data to Redux
         const action = {
-            type: 'SET_ADD_COMMENTS'
+            type: 'SET_ADD_COMMENTS',
+            payload: comments
         }
         dispatch(action)
         history.push('/review')

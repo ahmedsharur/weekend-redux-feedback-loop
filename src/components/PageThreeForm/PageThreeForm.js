@@ -12,7 +12,8 @@ function PageThreeForm(){
         console.log('add support', support);
         // Send data to redux
         const action = {
-            type: 'SET_ADD_SUPPORT'
+            type: 'SET_ADD_SUPPORT',
+            payload: support
         }
         dispatch(action);
         history.push('/comments')
