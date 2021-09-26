@@ -16,26 +16,24 @@ function ReviewFeedback(){
         fetchReviewFeedback();
     }, [])
 
-    const fetchReviewFeedback = () => {
-        axios({
-            method: 'GET',
-            url: '/feedback',
-        }).then(response => {
-            console.log(response.data);
-            dispatch({
-            type: 'SET_REVIEW_FEEDBACK',
-            payload: response.data,
-            })
-        }).catch(error => {
-            console.log('in fetchReviewFeedback', error)
-        });
+    // const fetchReviewFeedback = () => {
+    //     axios({
+    //         method: 'GET',
+    //         url: '/feedback',
+    //     }).then(response => {
+    //         console.log(response.data);
+    //         dispatch({
+    //         type: 'SET_REVIEW_FEEDBACK',
+    //         payload: response.data,
+    //         })
+    //     }).catch(error => {
+    //         console.log('in fetchReviewFeedback', error)
+    //     });
     
-    }
+    // }
     return (
         
-        <div> 
-
-        </div>
+        <h1> Review Your Feedback</h1>
         
     )
 }

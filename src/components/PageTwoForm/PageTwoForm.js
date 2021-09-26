@@ -28,7 +28,7 @@ function PageTwoForm(){
                 value={understanding}
                 onChange={(event) => setUnderstanding(event.target.value)}
                 />
-                    <button type ="submit"> Next</button>
+                    <button type ="next"> Next</button>
         </form>
     );
 }
