@@ -7,7 +7,7 @@ function PageOneForm (){
     const [feeling, setFeeling] = useState('')
     const dispatch = useDispatch();
     const history = useHistory();
-    const handleNext = event => {
+    const handlePageOneNext = event => {
         event.preventDefault();
 
         console.log('add feeling', feeling);
@@ -20,7 +20,7 @@ function PageOneForm (){
         history.push('/understanding')
     }
     return (
-        <form onSubmit={handleNext} className="next">
+        <form onSubmit={handlePageOneNext} className="nextPageOne">
     <h1> How are you feeling today?</h1>
     <p>Feeling? </p>
     <input placeholder ="feeling" 

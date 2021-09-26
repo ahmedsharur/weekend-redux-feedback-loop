@@ -24,10 +24,18 @@ const feelingToAddReducer = (state = [], action )=> {
     return state;
 }
 
+const understandingToAddReducer =(state = [], action) =>{
+    if(action.type === 'SET_ADD_UNDERSTANDING'){
+        return [...state, action.payload]
+    }
+    return state;
+}
+
 const reduxStore = createStore(
     combineReducers({
         ReviewFeedbackReducer,
-        feelingToAddReducer
+        feelingToAddReducer,
+        understandingToAddReducer,
     }),
     applyMiddleware(logger)
 );
