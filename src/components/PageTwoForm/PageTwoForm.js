@@ -12,7 +12,8 @@ function PageTwoForm(){
         console.log('add understanding', understanding)
         // send data to Redux
     const action = {
-        type: 'SET_ADD_UNDERSTANDING'
+        type: 'SET_ADD_UNDERSTANDING',
+        payload: understanding
     }
     dispatch(action)
     history.push('/support')

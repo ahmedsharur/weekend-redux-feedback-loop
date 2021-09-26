@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import{
   HashRouter as Router, Route
 } from 'react-router-dom'
@@ -9,6 +8,7 @@ import PageTwoForm from '../PageTwoForm/PageTwoForm';
 import PageThreeForm from '../PageThreeForm/PageThreeForm';
 import PageFourForm from '../PageFourForm/PageFourForm';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import ThankYou from '../ThankYou/ThankYou'
 function App() {
 
   return (
@@ -24,8 +24,9 @@ function App() {
           <Route exact path="/understanding" component={PageTwoForm}/>
           <Route exact path="/support" component={PageThreeForm}/>
           <Route exact path="/comments" component={PageFourForm}/>
+          <Route exact path="/review" component={ReviewFeedback}/>
+          <Route exact path="/thankyou" component={ThankYou}/>
         </Router>
-
       </main>
     </div>
   );

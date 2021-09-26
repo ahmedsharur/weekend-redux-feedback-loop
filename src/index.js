@@ -7,50 +7,50 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger'
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 
-const ReviewFeedbackReducer = (state = [], action) =>{
-    // set feedback review with data from server
-    if (action.type === 'SET_REVIEW_FEEDBACK'){
+// const ReviewFeedbackReducer = (state = [], action) =>{
+//     // set feedback review with data from server
+//     if (action.type === 'SET_REVIEW_FEEDBACK'){
+//         return action.payload;
+//     }
+//     //No change to data
+//     return state;
+// }
+
+const feelingToAddReducer = (state = '', action )=> {
+    if (action.type === 'SET_ADD_FEELING'){
+        return  action.payload
+    }
+    //No change to data
+    return state;
+}
+
+const understandingToAddReducer =(state = '', action) =>{
+    if(action.type === 'SET_ADD_UNDERSTANDING'){
+        return  action.payload
+    }
+    return state;
+}
+
+const supportToAddReducer = (state = '', action) =>{
+    if (action.type === 'SET_ADD_SUPPORT'){
         return action.payload;
     }
-    //No change to data
     return state;
 }
 
-const feelingToAddReducer = (state = [], action )=> {
-    if (action.type === 'SET_ADD_FEELING'){
-        return [...state, action.payload];
-    }
-    //No change to data
-    return state;
-}
-
-const understandingToAddReducer =(state = [], action) =>{
-    if(action.type === 'SET_ADD_UNDERSTANDING'){
-        return [...state, action.payload]
-    }
-    return state;
-}
-
-const supportToAddReducer = (state = [], action) =>{
-    if (action.type = 'SET_ADD_SUPPORT'){
-        return [...state, action.payload]
-    }
-    return state;
-}
-
-const commentsToAddReducer = (state = [], action) =>{
+const commentsToAddReducer = (state = '', action) =>{
     if (action.type === 'SET_ADD_COMMENTS'){
-        return [...state, action.payload]
+        return action.payload
     }
     return state;
 }
 
 const reduxStore = createStore(
     combineReducers({
-        ReviewFeedbackReducer,
         feelingToAddReducer,
         understandingToAddReducer,
         supportToAddReducer,
+        commentsToAddReducer,
     }),
     applyMiddleware(logger)
 );

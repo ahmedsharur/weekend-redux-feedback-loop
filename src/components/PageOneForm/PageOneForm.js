@@ -15,6 +15,7 @@ function PageOneForm (){
         //Send data to Redux
         const action = {
             type: 'SET_ADD_FEELING',
+            payload: feeling
         }
         dispatch(action)
         history.push('/understanding')
@@ -23,10 +24,12 @@ function PageOneForm (){
         <form onSubmit={handlePageOneNext} className="nextPageOne">
     <h1> How are you feeling today?</h1>
     <p>Feeling? </p>
-    <input placeholder ="feeling" 
+    <input 
+    required
+    placeholder ="feeling" 
     value={feeling}
     onChange={(event) => setFeeling(event.target.value)}/>
-        <button type="submit"> Next </button>
+        <button type="next"> Next </button>
         </form>
     ) 
 }

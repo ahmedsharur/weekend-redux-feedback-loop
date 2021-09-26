@@ -13,9 +13,9 @@ function PageThreeForm(){
         // Send data to redux
         const action = {
             type: 'SET_ADD_SUPPORT',
-            payload: support
-        }
-        dispatch(action);
+            payload: support,
+    }
+        dispatch(action)
         history.push('/comments')
     }
     return (
