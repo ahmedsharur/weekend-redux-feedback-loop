@@ -7,40 +7,43 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger'
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 
-// const ReviewFeedbackReducer = (state = [], action) =>{
-//     // set feedback review with data from server
-//     if (action.type === 'SET_REVIEW_FEEDBACK'){
-//         return action.payload;
-//     }
-//     //No change to data
-//     return state;
-// }
-
-const feelingToAddReducer = (state = '', action )=> {
+const feelingToAddReducer = (state = [], action )=> {
     if (action.type === 'SET_ADD_FEELING'){
         return  action.payload
+    }
+    else if (action.type === 'SET_REVIEW_FEEDBACK'){
+        return state;
     }
     //No change to data
     return state;
 }
 
-const understandingToAddReducer =(state = '', action) =>{
+const understandingToAddReducer =(state = [], action) =>{
     if(action.type === 'SET_ADD_UNDERSTANDING'){
         return  action.payload
     }
-    return state;
-}
-
-const supportToAddReducer = (state = '', action) =>{
-    if (action.type === 'SET_ADD_SUPPORT'){
-        return action.payload;
+    else if (action.type === 'SET_REVIEW_FEEDBACK'){
+        return state;
     }
     return state;
 }
 
-const commentsToAddReducer = (state = '', action) =>{
+const supportToAddReducer = (state = [], action) =>{
+    if (action.type === 'SET_ADD_SUPPORT'){
+        return action.payload;
+    }
+    else if (action.type === 'SET_REVIEW_FEEDBACK'){
+        return state;
+    }
+    return state;
+}
+
+const commentsToAddReducer = (state = [], action) =>{
     if (action.type === 'SET_ADD_COMMENTS'){
         return action.payload
+    }
+    else if (action.type === 'SET_REVIEW_FEEDBACK'){
+        return state;
     }
     return state;
 }
