@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 function ThankYou() {
-  const backToFeeling = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+  const backToFeeling = () => {
     const action = {
       type: "SET_BACK_TO_FEELING",
       payload: null,

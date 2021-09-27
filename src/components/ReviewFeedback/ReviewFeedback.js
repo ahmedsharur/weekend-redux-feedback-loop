@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 function ReviewFeedback() {
   const feedbackToAdd = useSelector((store) => store);
+  
   const history = useHistory();
   const dispatch = useDispatch();
   //GET Review Feedback from the server
@@ -28,7 +29,9 @@ function ReviewFeedback() {
         console.log("in fetchReviewFeedback", error);
       });
   };
+  // sends an axios post
   const sendFeedbackToServer = () => {
+      console.log(feedbackToAdd)
     axios({
       method: "POST",
       url: "/feedback",
