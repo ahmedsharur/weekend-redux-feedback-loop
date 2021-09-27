@@ -3,12 +3,12 @@ import{
   HashRouter as Router, Route
 } from 'react-router-dom'
 import './App.css';
-import PageOneForm from '../PageOneForm/PageOneForm';
-import PageTwoForm from '../PageTwoForm/PageTwoForm';
-import PageThreeForm from '../PageThreeForm/PageThreeForm';
-import PageFourForm from '../PageFourForm/PageFourForm';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import ThankYou from '../ThankYou/ThankYou'
+import Feeling from '../Feeling/Feeling';
+import Understanding from '../Understanding/Understanding';
+import Support from '../Support/Support';
+import Comments from '../Comments/Comments';
 function App() {
 
   return (
@@ -20,10 +20,10 @@ function App() {
       <main>
         <Router>
           <Route exact path="/"/>
-          <Route exact path="/feeling" component={PageOneForm}/>
-          <Route exact path="/understanding" component={PageTwoForm}/>
-          <Route exact path="/support" component={PageThreeForm}/>
-          <Route exact path="/comments" component={PageFourForm}/>
+          <Route exact path="/feeling" component={Feeling}/>
+          <Route exact path="/understanding" component={Understanding}/>
+          <Route exact path="/support" component={Support}/>
+          <Route exact path="/comments" component={Comments}/>
           <Route exact path="/review" component={ReviewFeedback}/>
           <Route exact path="/thankyou" component={ThankYou}/>
         </Router>
