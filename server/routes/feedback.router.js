@@ -16,8 +16,9 @@ router.get ('/', (req,res) => {
 });
 // adds a new feedback to the page
 router.post('/', (req, res) => {
-    let feedback = req.body;
-    let newFeedback = (feedback.reviewToAddReducer[0]);
+    //let feedback = req.body;
+    let newFeedback = req.body
+    console.log('in post', newFeedback)
     let queryText = `INSERT INTO "feedback"
     ("feeling", "understanding", "support",
      "comments") VALUES($1, $2, $3, $4); `;

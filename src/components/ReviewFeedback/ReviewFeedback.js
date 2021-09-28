@@ -35,7 +35,12 @@ function ReviewFeedback() {
     axios({
       method: "POST",
       url: "/feedback",
-      data: feedbackToAdd,
+      data: {
+        feeling: feedbackToAdd.feelingToAddReducer,
+        understanding: feedbackToAdd.understandingToAddReducer,
+        support: feedbackToAdd.supportToAddReducer,
+        comments: feedbackToAdd.commentsToAddReducer,
+      }
     })
       .then((response) => {
         console.log(response.data);
